@@ -4,28 +4,18 @@
   <h1 class="text1">ชื่อ</h1><input type="text" :value="fname">
   <h1 class="text1">นามสกุล</h1><input type="text" :value="lname">
   <h1 class="text1">แผนกวิชา</h1><input type="text" :value="dname">
-      <nuxt-link to="/pageEdit.vue"><v-btn
-      color="info"
-      :loading="loading4"
-      @click.native="loader = 'loading4'"
-      :disabled="loading4"
-    >
+      <v-btn @click='goedit' color="info">
       แก้ไขข้อมูลนักศึกษา
       <span slot="loader" class="custom-loader">
         <v-icon light>cached</v-icon>
       </span>
-    </v-btn></nuxt-link>
-          <nuxt-link to="/linkdata"><v-btn
-      color="info"
-      :loading="loading4"
-      @click.native="loader = 'loading4'"
-      :disabled="loading4"
-    >
+    </v-btn>
+      <v-btn color="info" @click='golink'>
       กลับหน้าหลัก
       <span slot="loader" class="custom-loader">
         <v-icon light>cached</v-icon>
       </span>
-    </v-btn></nuxt-link>
+    </v-btn>
   <!-- <nuxt></nuxt>  -->
   </div>
 </template>
@@ -39,7 +29,14 @@ export default {
           }
     },
     layout: 'stvie',
-
+methods: {    
+  goedit() {      
+    this.$router.push('/pageEdit')  
+           },  
+  golink() {      
+    this.$router.push('/linkstu')  
+           },    
+     },
         
 }
 </script>
