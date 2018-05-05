@@ -26,7 +26,7 @@
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>ประวัตินักศึกษา</v-toolbar-title>
+      <v-toolbar-title>เว็บไซต์ประวัตินักศึกษา</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
