@@ -26,7 +26,7 @@ export default {
               fname: this.fname,
               lname: this.lname,
           })
-          this.$router.push('/student')
+          this.$router.push('linkstu1')
           if(!res.data.ok){
               //ToDo: แสดงข้อความว่าบันทึกไม่สำเร็จ
           } else{

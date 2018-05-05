@@ -1,20 +1,12 @@
 <template>
   <div>
     <h1>Student List</h1>
-    <v-select
-      :items="departmentList"
-      v-model="department"
-      label="Select"
-      single-line
-    />
-    <select v-model="department">
-      <option value="com">com</option>
-      <option value="acc">acc</option>
-    </select>
+ 
     <ul>
       <li v-for="st in students" :key="st.id">
         {{ st.code }} {{ st.fname }} {{ st.lname }}
-        <v-btn @click="editStudent(st.id)">Edit</v-btn>
+        <v-icon @click="editStudent(st.id)" large color="blue darken-2">chat</v-icon>
+     
       </li>
     </ul>
   </div>
@@ -49,7 +41,7 @@ export default {
       this.students = res.data.student
     },
     editStudent(id) {
-        this.$router.push('/stview?id=' + id)
+        this.$router.push('/pageEdit?id=' + id)
     },
   }, // methods
 }

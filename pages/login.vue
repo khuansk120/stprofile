@@ -51,7 +51,7 @@
   //  },
     methods:{
       gotoPage(){
-         this.$router.push('/linkdata') 
+         this.$router.push('/linkstu1') 
       }
    }
   }
