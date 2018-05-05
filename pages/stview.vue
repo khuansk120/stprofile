@@ -2,8 +2,11 @@
 <div>
   <h1 class="header">ประวัตินักศึกษา</h1>
   <h1 class="text1">ชื่อ</h1>
+       <li v-for="st in student" :key="st.id">
+         {{st.code}}{{st.fname}}{{st.lname}}
+     </li>
     <v-layout row><v-flex xs8>
-        <v-text-field name="fname1" label="FirstName" single-line type="text"></v-text-field>
+        <v-text-field name="fname1" :value="fname" label="FirstName" single-line type="text"></v-text-field>
   <h1 class="text1">นามสกุล</h1>
         <v-text-field name="lname1" label="LastName" single-line type="text"></v-text-field>
   <h1 class="text1">แผนกวิชา</h1>
@@ -28,9 +31,10 @@
 export default {
   data(){
     return{
-      fname:'กรุณาใส่ชื่อ',
+      fname:"[st.code]",
       lname:'กรุณาใส่นามสกุล',
       dname:'กรุณาใส่แผนกวิชา',
+      student:[],
           }
     },
     layout: 'stvie',
@@ -42,7 +46,21 @@ methods: {
     this.$router.push('/linkstu')  
            },    
      },
-        
+  //     watch: {
+  //   cls() {
+  //     this.getStudent()
+  //   },
+  // },
+
+    async created(){
+      console.log('YoYo')
+      let res = await this.$http.get('/student', {params:{fname: "Supajaroen"}})
+
+      // let res = await this.$http.get('/student', {params:{department: 'com'}})
+    // console.log(res.data.student)
+    this.student=res.data.student
+    //ไม่ว่าจะฟังก์ชั่นต์ไหนก็ตาม ถ้ามีการใช้ await ต้องมีการประกาศ  async ด้านหน้า
+  },
 }
 </script>
 
