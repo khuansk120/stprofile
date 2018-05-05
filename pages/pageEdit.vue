@@ -3,10 +3,13 @@
      
     <h2 >Edit ST Profile</h2>
     
-    ชื่อ : <input type="text" :value="fname" style="border: 2px black solid" class="big" ><br><br>
-    นามสกุล : <input type="text" :value="lname" style="border: 2px black solid" class="f-color"><br><br>
-    สาขาวิชา : <input type="text" :value="department" style="border: 2px black solid"><br><br>
-    <button @click="edit">Submit</button>
+   <v-card-text>
+                <v-form>
+                  <v-text-field prepend-icon="person" name="fname" label="ชื่อ:" type="text"></v-text-field>
+                  <v-text-field prepend-icon="person" name="lname" label="นามสกุล" id="lname" type="text"></v-text-field>
+                  <v-text-field prepend-icon="person" name="department" label="สาขาวิชา" id="department" type="text"></v-text-field>
+                </v-form>
+              </v-card-text>
     
     <ul>
       <li  v-for="st in student" :key="st.code">

@@ -1,9 +1,14 @@
 <template>
 <div>
   <h1 class="header">ประวัตินักศึกษา</h1>
-  <h1 class="text1">ชื่อ</h1><input type="text" :value="fname">
-  <h1 class="text1">นามสกุล</h1><input type="text" :value="lname">
-  <h1 class="text1">แผนกวิชา</h1><input type="text" :value="dname">
+  <h1 class="text1">ชื่อ</h1>
+    <v-layout row><v-flex xs8>
+        <v-text-field name="fname1" label="FirstName" single-line type="text"></v-text-field>
+  <h1 class="text1">นามสกุล</h1>
+        <v-text-field name="lname1" label="LastName" single-line type="text"></v-text-field>
+  <h1 class="text1">แผนกวิชา</h1>
+        <v-text-field name="dname1" label="Department Name" single-line type="text"></v-text-field>
+      </v-flex> </v-layout>
       <v-btn @click='goedit' color="info">
       แก้ไขข้อมูลนักศึกษา
       <span slot="loader" class="custom-loader">
