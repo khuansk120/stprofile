@@ -6,24 +6,25 @@
          {{st.code}}{{st.fname}}{{st.lname}}
      </li>
     <v-layout row><v-flex xs8>
-        <v-text-field name="fname1" :value="fname" label="FirstName" single-line type="text"></v-text-field>
+        <v-text-field name="fname1" v-model="fname" single-line type="text"/>
   <h1 class="text1">นามสกุล</h1>
-        <v-text-field name="lname1" label="LastName" single-line type="text"></v-text-field>
+        <v-text-field name="lname1" v-model="lname"  single-line type="text"/>
   <h1 class="text1">แผนกวิชา</h1>
-        <v-text-field name="dname1" label="Department Name" single-line type="text"></v-text-field>
-      </v-flex> </v-layout>
+        <v-text-field name="dname1" v-model="dname"  single-line type="text"/>
+      </v-flex>
       <v-btn @click='goedit' color="info">
       แก้ไขข้อมูลนักศึกษา
       <span slot="loader" class="custom-loader">
         <v-icon light>cached</v-icon>
       </span>
-    </v-btn>
+    </v-btn> <br>
       <v-btn color="info" @click='golink'>
       กลับหน้าหลัก
       <span slot="loader" class="custom-loader">
         <v-icon light>cached</v-icon>
       </span>
     </v-btn>
+    </v-layout>
   <!-- <nuxt></nuxt>  -->
   </div>
 </template>
@@ -37,6 +38,20 @@ export default {
       student:[],
           }
     },
+
+  // async created(){
+  //     console.log('YoYo')
+  //     let res = await this.$http.get('/student/id', {params:{fname: "Supajaroen"}})
+  //   this.student=res.data.student
+
+  async created(){
+      console.log('ok1')
+      let res = await this.$http.get('/student/id/' + this.$route.query.id)
+      this.fname = res.data.student.fname || ''
+      this.lname = res.data.student.lname || ''
+      this.dname = res.data.student.department || ''
+  },
+
     layout: 'stvie',
 methods: {    
   goedit() {      
@@ -51,16 +66,6 @@ methods: {
   //     this.getStudent()
   //   },
   // },
-
-    async created(){
-      console.log('YoYo')
-      let res = await this.$http.get('/student', {params:{fname: "Supajaroen"}})
-
-      // let res = await this.$http.get('/student', {params:{department: 'com'}})
-    // console.log(res.data.student)
-    this.student=res.data.student
-    //ไม่ว่าจะฟังก์ชั่นต์ไหนก็ตาม ถ้ามีการใช้ await ต้องมีการประกาศ  async ด้านหน้า
-  },
 }
 </script>
 
