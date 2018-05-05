@@ -11,17 +11,35 @@
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <nuxt-link to="/linkstu1">Home </nuxt-link>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile>
           <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
+            <v-icon>add_circle</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
+            <nuxt-link to="/isteacher">เพิ่มครู</nuxt-link>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon >add_circle</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <nuxt-link to="/isstu">เพิ่มนักศึกษา </nuxt-link>
+          </v-list-tile-content>
+        </v-list-tile>
+            <v-list-tile>
+          <v-list-tile-action>
+            <v-icon color="red">remove_circle</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <nuxt-link to="/login">ออกจากระบบ </nuxt-link>
+          </v-list-tile-content>
+        </v-list-tile>
+
+
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>
@@ -52,7 +70,8 @@
       </v-container>
     </v-content>
     <v-footer color="indigo" app>
-      <span class="white--text">&copy; 2017</span>
+      <span class="white--text">Disign By นายวรเวก เชื้อทอง วก.วังน้ำเย็น //
+        นายศุภเจริญ นิลพันธุ์ วท.ปทุมธานี  //  นางวิลาวัลย์ วัชโรทัย วท.ปทุมธานี  //  นางสายชล สุขนิ่ม วท.สัตหีบ</span>
     </v-footer>
   </v-app>
 </template>
@@ -62,7 +81,7 @@ export default {
       return{
           drawer: true,
       }
-  }
+  },
 }
 </script>
 

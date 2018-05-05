@@ -2,15 +2,16 @@
   <div>
     <h1>Student List</h1>
  
-    <ul>
+<ul>
       <li v-for="st in students" :key="st.id">
-        {{ st.code }} {{ st.fname }} {{ st.lname }}
+         {{ st.code }} {{ st.fname }} {{ st.lname }}
         <v-icon @click="editStudent(st.id)" large color="blue darken-2">chat</v-icon>
      
       </li>
     </ul>
   </div>
 </template>
+
 <script>
 export default {
   data() {
