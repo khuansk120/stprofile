@@ -45,8 +45,9 @@
         <!-- </v-layout> -->
       <!-- </v-container>
     </v-content> -->
-    <v-footer color="indigo" app>
-      <span class="white--text">&copy; 2017</span>
+<v-footer color="indigo" app>
+      <span class="white--text">Disign By นายวรเวก เชื้อทอง วก.วังน้ำเย็น //
+        นายศุภเจริญ นิลพันธุ์ วท.ปทุมธานี  //  นางวิลาวัลย์ วัชโรทัย วท.ปทุมธานี  //  นางสายชล สุขนิ่ม วท.สัตหีบ</span>
     </v-footer>
   </v-app>
 </template>
