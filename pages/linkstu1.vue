@@ -6,11 +6,12 @@
 
 <v-container grid-list-md> 
   <v-layout row wrap> 
-     
-    <v-text-field label="รหัสประจำตัว"></v-text-field>  
-    <v-text-field label="ชื่อนักศึกษา" ></v-text-field>  
+     <h3>รหัสนักเรียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อนักเรียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;นามสกุล&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ดูข้อมูล&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แก้ไข</h3>
+    <!-- <v-text-field label="รหัสนักเรียน"></v-text-field>  
+    <v-text-field label="ชื่อนักเรียน" ></v-text-field>  
     <v-text-field label="นามสกุล" ></v-text-field> 
-    <v-text-field label="แก้ไข" ></v-text-field> 
+    <v-text-field label="ดูข้อมูล" ></v-text-field> 
+    <v-text-field label="แก้ไข" ></v-text-field>  -->
     
     </v-layout></v-container> 
     <ul> 
@@ -20,6 +21,7 @@
         <v-text-field  :value="st.code"></v-text-field>  
         <v-text-field :value="st.fname" ></v-text-field>  
         <v-text-field :value="st.lname" ></v-text-field>  
+        <v-icon @click="stview(st.id)" large color="blue darken-2">search</v-icon> 
         <v-icon @click="editStudent(st.id)" large color="blue darken-2">chat</v-icon> 
           </v-layout></v-container></li> 
     </ul> 
@@ -30,13 +32,13 @@
 export default { 
   data() { 
     return { 
-      department: 'com', 
+      // department: 'com', 
       students: [], 
-      departmentList: [ 
-        { value: 'com', text: 'computer' }, 
-        { value: 'acc', text: 'account' }, 
-        { value: 'ele', text: 'electronic' }, 
-      ], 
+      // departmentList: [ 
+      //   { value: 'com', text: 'computer' }, 
+      //   { value: 'acc', text: 'account' }, 
+      //   { value: 'ele', text: 'electronic' }, 
+      // ], 
     } 
   }, 
   watch: { 
@@ -52,12 +54,18 @@ export default {
   methods: { 
     async getStudent() { 
       // let res = await this.$http.get('/student?class=' + this.department) 
-      let res = await this.$http.get('/student', {params: {department: this.department}}) 
+      let res = await this.$http.get('/student') 
       this.students = res.data.student 
     }, 
     editStudent(id) { 
         this.$router.push('/pageEdit?id=' + id) 
        }, 
+    stview(id) { 
+        this.$router.push('/stview?id=' + id) 
+       }, 
+
+
+       
   }, // methods 
 } 
 </script>
