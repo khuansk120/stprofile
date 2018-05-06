@@ -12,12 +12,12 @@
   <h1 class="text1">แผนกวิชา</h1>
         <v-text-field name="dname1" v-model="dname"  single-line type="text"/>
       </v-flex>
-      <v-btn @click='goedit' color="info">
+      <!-- <v-btn @click='goedit' color="info">
       แก้ไขข้อมูลนักศึกษา
       <span slot="loader" class="custom-loader">
         <v-icon light>cached</v-icon>
       </span>
-    </v-btn> <br>
+    </v-btn> <br> -->
       <v-btn color="info" @click='golink'>
       กลับหน้าหลัก
       <span slot="loader" class="custom-loader">
@@ -58,7 +58,7 @@ methods: {
     this.$router.push('/pageEdit')  
            },  
   golink() {      
-    this.$router.push('/linkstu')  
+    this.$router.push('/linkstu1')  
            },    
      },
   //     watch: {

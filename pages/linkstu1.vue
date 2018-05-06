@@ -2,33 +2,35 @@
   <div>
     <h1>Student List</h1>
  
-    <ul>
+  
       <li v-for="st in students" :key="st.id">
-        {{ st.code }} {{ st.fname }} {{ st.lname }}
-        <v-icon @click="editStudent(st.id)" large color="blue darken-2">chat</v-icon>
+        {{ st.code }} {{ st.fname }} {{ st.lname }} {{ st.department }}
+        
+        <v-icon @click="editStudent(st.id)" mdi color="blue darken-2">edit</v-icon>
+        <v-icon @click="viewStudent(st.id)" mdi color="red darken-2">search</v-icon>
      
-      </li>
-    </ul>
+    </li>
+ 
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      department: 'com',
+      //department: 'com',
       students: [],
-      departmentList: [
-        { value: 'com', text: 'computer' },
-        { value: 'acc', text: 'account' },
-        { value: 'ele', text: 'electronic' },
-      ],
+      // departmentList: [
+      //   { value: 'com', text: 'computer' },
+      //   { value: 'acc', text: 'account' },
+      //   { value: 'ele', text: 'electronic' },
+      // ],
     }
   },
-  watch: {
-    department() {
-      this.getStudent()
-    },
-  },
+  // watch: {
+  //   department() {
+  //     this.getStudent()
+  //   },
+  // },
   async created() {
     console.log('created')
     this.getStudent()
@@ -42,6 +44,9 @@ export default {
     },
     editStudent(id) {
         this.$router.push('/pageEdit?id=' + id)
+    },
+        viewStudent(id) {
+        this.$router.push('/view?id=' + id)
     },
   }, // methods
 }
