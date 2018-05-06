@@ -64,14 +64,15 @@
     methods:{
     async gotoPage() {     
       // console.log(this.tcode,this.password) 
-      console.log(tcode,password) 
-            let res = await this.$http.post('/student/login',
-      // tcode==this.tcode,
-      // password==this.password,
-      )
-      if(tcode === this.tcode,
-      password===this.password
-      ){
+      // console.log(tcode,password) 
+      //       let res = await this.$http.post('/student/login',
+      // // tcode==this.tcode,
+      // // password==this.password,
+      // )
+      // if(tcode === this.tcode,
+      // password===this.password
+      // )
+      {
 
     this.$router.push('/linkstu1')  
            }
